@@ -4,7 +4,7 @@ dotfiles
 
 symbolic link
 ---
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+1. `ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc`
 
 managiment files
 ---

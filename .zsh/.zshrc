@@ -38,6 +38,16 @@ PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
 
 
 ## Coding Settings
+# emacs
+alias emacs='/usr/local/Cellar/emacs/24.3/bin/emacs -nw'
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # rbenv
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/versions/2.1.2/bin:$PATH"

@@ -37,16 +37,16 @@
 (which-function-mode 1)
 
 ;;; font, background-color
-(set-face-attribute 'default nil
-		    :family "Menlo"
-		    :height 120)
+;(set-face-attribute 'default nil
+;		    :family "Menlo"
+;		    :height 120)
 
 ;; 日本語
-(set-fontset-font
- nil 'japanese-jisx0208
+;(set-fontset-font
+; nil 'japanese-jisx0208
  ;; (font-spec :family "Hiragino Mincho Pro"))
- (font-spec :family "Hiragino Kaku Gothic ProN"))
+; (font-spec :family "Hiragino Kaku Gothic ProN"))
 
 ;; 半角と全角の比を1:2に
-(setq face-font-rescale-alist
-      '((".*Hiragino_Mincho_pro.*" . 1.2)))
+;(setq face-font-rescale-alist
+;     '((".*Hiragino_Mincho_pro.*" . 1.2)))

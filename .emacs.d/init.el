@@ -13,6 +13,9 @@
 ;;; auto-image-file-mode
 (auto-image-file-mode t)
 
+;;; tab size
+(setq-default tab.width 4) 
+
 ;;; hide menu-bar and tool-bar
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -36,17 +39,32 @@
 ;;; show function name
 (which-function-mode 1)
 
-;;; font, background-color
-;(set-face-attribute 'default nil
-;		    :family "Menlo"
-;		    :height 120)
+;;; font settings
+(set-fontset-font
+ (frame-parameter nil 'font)
+ 'japanese-jisx0208
+ '("Hiragino Maru Gothic Pro" . "iso10646-1"))
+(set-fontset-font
+ (frame-parameter nil 'font)
+ 'japanese-jisx0212
+ '("Hiragino Maru Gothic Pro" . "iso10646-1"))
+(set-fontset-font
+ (frame-parameter nil 'font)
+ 'mule-unicode-0100-24ff
+ '("monaco" . "iso10646-1"))
+(setq face-font-rescale-alist
+      '(("^-apple-hiragino.*" . 1.2)
+        (".*osaka-bold.*" . 1.2)
+        (".*osaka-medium.*" . 1.2)
+        (".*courier-bold-.*-mac-roman" . 1.0)
+        (".*monaco cy-bold-.*-mac-cyrillic" . 0.9)
+        (".*monaco-bold-.*-mac-roman" . 0.9)
+        ("-cdac$" . 1.3)))
 
-;; 日本語
-;(set-fontset-font
-; nil 'japanese-jisx0208
- ;; (font-spec :family "Hiragino Mincho Pro"))
-; (font-spec :family "Hiragino Kaku Gothic ProN"))
-
-;; 半角と全角の比を1:2に
-;(setq face-font-rescale-alist
-;     '((".*Hiragino_Mincho_pro.*" . 1.2)))
+(create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
+(set-fontset-font "fontset-menlokakugo"
+                  'unicode
+                  (font-spec :family "Hiragino Kaku Gothic ProN" :size 16)
+                  nil
+                  'append)
+(add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))

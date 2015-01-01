@@ -27,7 +27,6 @@ alias mv='mv -i'
 export LANG=ja_JP.UTF-8
 setopt print_eight_bit
 
-
 ## Visual Settings
 # lsコマンド時、自動で色付け
 export CLICOLOR=true
@@ -36,10 +35,13 @@ export CLICOLOR=true
 PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
 %# "
 
-
 ## Coding Settings
 # emacs
 alias emacs='/usr/local/Cellar/emacs/24.3/bin/emacs -nw'
+
+# node.js
+source ~/.nvm/nvm.sh
+nvm use "v0.10.0"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -51,3 +53,6 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/versions/2.1.2/bin:$PATH"
+export PATH="$PATH:/sbin"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
